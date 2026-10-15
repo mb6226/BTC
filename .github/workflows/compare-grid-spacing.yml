@@ -1,0 +1,47 @@
+name: Compare BTCUSDT 2.5% vs 5% Grid Spacing
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/compare-grid-spacing.yml"
+      - "scripts/backtest_grid_spacing.py"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: compare-btcusdt-grid-spacing
+  cancel-in-progress: false
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run separate 2.5% and 5% backtests
+        run: python scripts/backtest_grid_spacing.py
+      - name: Commit comparison results
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/grid_spacing_comparison/
+          if git diff --cached --quiet; then
+            echo "No result changes to commit."
+          else
+            git commit -m "results: compare 2.5% and 5% BTCUSDT grid spacing"
+            git push
+          fi
+      - name: Upload detailed backtest outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: btcusdt-grid-spacing-comparison
+          path: results/grid_spacing_comparison/
+          if-no-files-found: error
