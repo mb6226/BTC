@@ -1,0 +1,57 @@
+{
+  "data_file": "data/spot/btcusdt/1m/BTCUSDT-1m-2025-10-15_2026-10-14.csv.gz",
+  "model": {
+    "market": "Binance BTCUSDT spot",
+    "position_notional_usd": 100.0,
+    "spacing_and_take_profit": "same percentage; 2.5% or 5%",
+    "leverage": 1,
+    "fees_and_slippage": "not included",
+    "intrabar_assumption": "low is processed before high",
+    "grid_anchor": "first candle close; grid levels extend downward geometrically",
+    "reentry": "a level may be bought again on a later bar after its prior position closes"
+  },
+  "results": [
+    {
+      "spacing_pct": 2.5,
+      "position_notional_usd": 100.0,
+      "bars": 525600,
+      "start_time": "1760486400000000",
+      "end_time": "1792022340000000",
+      "start_price": 113014.05,
+      "end_price": 81682.01,
+      "grid_levels_reached_below_anchor": 26,
+      "total_entries": 181,
+      "closed_trades": 169,
+      "wins": 169,
+      "realized_profit_usd": 422.4999999999996,
+      "open_positions_at_end": 12,
+      "unrealized_pnl_at_end_usd": -173.6331567783057,
+      "net_pnl_including_open_positions_usd": 248.8668432216939,
+      "peak_capital_required_usd": 2600.0,
+      "peak_concurrent_positions": 26,
+      "max_equity_drawdown_usd": 567.5544494251377,
+      "open_position_cost_at_end_usd": 1200.0
+    },
+    {
+      "spacing_pct": 5.0,
+      "position_notional_usd": 100.0,
+      "bars": 525600,
+      "start_time": "1760486400000000",
+      "end_time": "1792022340000000",
+      "start_price": 113014.05,
+      "end_price": 81682.01,
+      "grid_levels_reached_below_anchor": 13,
+      "total_entries": 41,
+      "closed_trades": 34,
+      "wins": 34,
+      "realized_profit_usd": 170.00000000000006,
+      "open_positions_at_end": 7,
+      "unrealized_pnl_at_end_usd": -106.79615020310098,
+      "net_pnl_including_open_positions_usd": 63.20384979689908,
+      "peak_capital_required_usd": 1400.0,
+      "peak_concurrent_positions": 14,
+      "max_equity_drawdown_usd": 312.00528949789793,
+      "open_position_cost_at_end_usd": 700.0
+    }
+  ]
+}
