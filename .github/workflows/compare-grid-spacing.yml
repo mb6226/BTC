@@ -1,4 +1,5 @@
 name: Compare BTCUSDT 2.5% vs 5% Grid Spacing
+# Compares independent grid spacing and take-profit variants on the latest downloaded year of data.
 
 on:
   workflow_dispatch:
