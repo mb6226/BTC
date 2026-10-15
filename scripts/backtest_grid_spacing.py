@@ -53,7 +53,9 @@ def backtest(bars, step):
         # permits a level to be re-entered only after price has risen above it.
         if idx > 0 and bar["low"] < bars[idx - 1]["close"] and bar["low"] < anchor:
             prev = bars[idx - 1]["close"]
-            if prev >= anchor:
+            if prev > anchor:
+                first = 0
+            elif prev == anchor:
                 first = 1
             else:
                 first = max(1, math.floor(math.log(prev / anchor) / math.log(1.0 - step)) + 1)
