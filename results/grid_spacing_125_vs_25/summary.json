@@ -1,0 +1,49 @@
+{
+  "data_file": "data/spot/btcusdt/1m/BTCUSDT-1m-2025-10-15_2026-10-14.csv.gz",
+  "results": [
+    {
+      "spacing_pct": 1.25,
+      "position_notional_usd": 100.0,
+      "bars": 525600,
+      "start_time": "1760486400000000",
+      "end_time": "1792022340000000",
+      "start_price": 113014.05,
+      "end_price": 81682.01,
+      "deepest_grid_level": 53,
+      "total_entries": 636,
+      "closed_trades": 609,
+      "realized_profit_usd": 761.2499999999994,
+      "open_positions_at_end": 27,
+      "unrealized_pnl_at_end_usd": -390.82000797921734,
+      "net_pnl_including_open_positions_usd": 370.4299920207821,
+      "peak_concurrent_positions": 54,
+      "peak_capital_required_usd": 5400.0,
+      "capital_tied_up_at_end_usd": 2700.0,
+      "max_equity_drawdown_usd": 1177.7911656086096
+    },
+    {
+      "spacing_pct": 2.5,
+      "position_notional_usd": 100.0,
+      "bars": 525600,
+      "start_time": "1760486400000000",
+      "end_time": "1792022340000000",
+      "start_price": 113014.05,
+      "end_price": 81682.01,
+      "deepest_grid_level": 26,
+      "total_entries": 182,
+      "closed_trades": 169,
+      "realized_profit_usd": 422.4999999999996,
+      "open_positions_at_end": 13,
+      "unrealized_pnl_at_end_usd": -201.3571787030133,
+      "net_pnl_including_open_positions_usd": 221.1428212969863,
+      "peak_concurrent_positions": 27,
+      "peak_capital_required_usd": 2700.0,
+      "capital_tied_up_at_end_usd": 1300.0,
+      "max_equity_drawdown_usd": 600.9631627665319
+    }
+  ],
+  "previous_workflow_2_5pct_reference": {
+    "net_pnl_including_open_positions_usd": 221.14,
+    "peak_capital_required_usd": 2700.0
+  }
+}
