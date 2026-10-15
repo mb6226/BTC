@@ -1,32 +1,32 @@
 # BTCUSDT Grid Spacing Comparison
 
-- Data file: `data/spot/btcusdt/1m/BTCUSDT-1m-2025-10-15_2026-10-14.csv.gz`
+- Data: `data/spot/btcusdt/1m/BTCUSDT-1m-2025-10-15_2026-10-14.csv.gz`
 - Period: 1760486400000000 to 1792022340000000
 - Candles: 525,600
-- Each entry: $100 spot notional; leverage 1; fees/slippage excluded.
-- For each variant, TP equals its grid spacing (2.5% or 5%).
-- Grid is anchored to the first close and adds buys at geometrically spaced lower levels.
-- OHLC ambiguity: within each candle, low is processed before high; results can be optimistic when both a buy and TP are touched in the same minute.
+- Spot long-only, leverage 1; each buy is $100 notional.
+- Separate tests: grid spacing and take-profit are both 2.5%, or both 5%.
+- Grid is anchored to the first candle close; levels extend downward geometrically.
+- No fees, spread, slippage, funding, or stop-loss included.
+- OHLC convention: process each minute's low (entries) before its high (take-profits); this can overstate results if both occur in one minute.
 
-| Metric | 2.5% spacing / TP | 5% spacing / TP |
+| Metric | 2.5% grid/TP | 5% grid/TP |
 |---|---:|---:|
 | Start price | $113,014.05 | $113,014.05 |
 | End price | $81,682.01 | $81,682.01 |
-| Grid levels reached below anchor | 26 | 13 |
+| Deepest grid level reached | 26 | 13 |
 | Total entries | 181 | 41 |
 | Closed trades | 169 | 34 |
 | Realized profit | $422.50 | $170.00 |
 | Unrealized P/L at end | $-173.63 | $-106.80 |
 | Net P/L incl. open positions | $248.87 | $63.20 |
 | Peak concurrent positions | 26 | 14 |
-| Peak capital required (open notional) | $2,600.00 | $1,400.00 |
+| Peak capital required | $2,600.00 | $1,400.00 |
 | Capital tied up at end | $1,200.00 | $700.00 |
 | Max equity drawdown | $567.55 | $312.01 |
 
-## Interpretation
+## How to read capital requirements
 
-- Peak capital required is the maximum simultaneous $100 positions open, multiplied by $100. It is a minimum cash estimate before fees and any reserve.
-- Realized profit excludes the value/P&L of positions still open at the end; net P/L includes their mark-to-market P/L.
-- This is a research backtest, not a guarantee of future returns. The grid is long-only and has no stop-loss, so prolonged declines can lock up substantial capital.
-
-Detailed trades and minute-by-minute equity curves are in the adjacent CSV files.
+Peak capital required = maximum simultaneous open positions × $100. This is the minimum cash tied up in open position notional before fees and reserve.
+Realized profit excludes still-open positions. Net P/L includes mark-to-market P/L on open positions at the final close.
+A long-only grid without a stop-loss can accumulate positions during a sustained decline; required capital and drawdown matter as much as profit.
+Detailed trade lists and minute-by-minute equity curves are saved as CSV files.
