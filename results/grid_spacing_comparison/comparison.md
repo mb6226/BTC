@@ -14,15 +14,15 @@
 | Start price | $113,014.05 | $113,014.05 |
 | End price | $81,682.01 | $81,682.01 |
 | Deepest grid level reached | 26 | 13 |
-| Total entries | 181 | 41 |
+| Total entries | 182 | 41 |
 | Closed trades | 169 | 34 |
 | Realized profit | $422.50 | $170.00 |
-| Unrealized P/L at end | $-173.63 | $-106.80 |
-| Net P/L incl. open positions | $248.87 | $63.20 |
-| Peak concurrent positions | 26 | 14 |
-| Peak capital required | $2,600.00 | $1,400.00 |
-| Capital tied up at end | $1,200.00 | $700.00 |
-| Max equity drawdown | $567.55 | $312.01 |
+| Unrealized P/L at end | $-201.36 | $-106.80 |
+| Net P/L incl. open positions | $221.14 | $63.20 |
+| Peak concurrent positions | 27 | 14 |
+| Peak capital required | $2,700.00 | $1,400.00 |
+| Capital tied up at end | $1,300.00 | $700.00 |
+| Max equity drawdown | $600.96 | $312.01 |
 
 ## How to read capital requirements
 
